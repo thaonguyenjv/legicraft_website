@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e7d3b8;
+  padding: 10px 20px;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.search {
+  flex-grow: 1;
+  max-width: 500px;
+  margin: 0 30px;
+  display: flex;
+}
+
+.search input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  background: #fff;
+  border-radius: 4px 0 0 4px;
+}
+
+.search button {
+  padding: 8px 16px;
+  background-color: #4f92a5;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.user-cart a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.main-content {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.sidebar {
+  width: 200px;
+  background: white;
+  padding: 15px;
+  margin-right: 20px;
+  border-radius: 8px;
+}
+
+.sidebar h3 {
+  background-color: #4f92a5;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.sidebar ul li {
+  padding: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar ul li:hover {
+  background-color: #e0e0e0;
+}
+
+.banner img {
+  width: 100%;
+  max-height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.product-section {
+  margin-top: 30px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.product-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  text-align: center;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 10px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product-card p {
+  margin-top: 10px;
+  font-weight: bold;
+}
