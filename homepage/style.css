@@ -8,12 +8,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #e7d3b8;
-  padding: 10px 20px;
+  background: #F2E9DD;
+  padding: 10px 10px;
 }
 
 .logo img {
-  height: 50px;
+  width: 150px;
+  height: 80px;
+  padding-left: 10px;
 }
 
 .search {
