@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LE.GICARFT | Trang chủ</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome để dùng icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+    <body>
+    <!-- Header -->
+    <header class="topbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo LE.GICARFT">
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Nhập sản phẩm cần tìm kiếm">
+            <button>Tìm kiếm</button>
+        </div>
+        <div class="user-cart" style="display: flex; align-items: center; gap: 5px; ">
+            <i class="far fa-user-circle" style="font-size:38px"></i>
+            <div>
+                Tài khoản<br><strong>Thảo Nguyên</strong>
+            </div> <!-- đặt tên admin là Thảo Nguyên  -->
+        </div>
+    </header>
+    <!-- Main layout -->
+    <div class="admin-container">
+    <!-- Dropdown chức năng quản lý -->
+    <div class="admin-dropdown">
+        <button onclick="toggleDropdown()" class="dropdown-button">
+        ☰ Chức năng quản lý
+        </button>
+        <div id="dropdown-menu" class="dropdown-content">
+            <a href="#">Tạo sản phẩm mới</a>
+            <a href="#">Danh sách sản phẩm</a>
+            <a href="#">Danh sách khách hàng</a>
+            <a href="#">Thống kê doanh thu</a>
+        </div>
+    </div>
+    <div class="admin-container">
+    <!-- Thống kê -->
+    <div class="stats">
+        <div class="stat-box">
+            <h3>Sản phẩm đang bán</h3>
+            <p class="stat-number">10</p>
+            <p>Đang chờ phê duyệt: 5</p>
+            <button>Tạo sản phẩm mới</button>
+            <button>Danh sách sản phẩm</button>
+        </div>
+
+        <div class="stat-box">
+            <h3>Tài khoản khách hàng</h3>
+            <p class="stat-number">50</p>
+            <p>5+ trong tuần qua</p>
+            <button>Danh sách khách hàng</button>
+            <button>Khách hàng thân thiết</button>
+        </div>
+
+        <div class="stat-box">
+            <h3>Doanh thu hôm nay</h3>
+            <p class="stat-number">1 000 000</p>
+            <p>30 ngày qua: 35 000 000</p>
+            <button>Tổng đơn hàng: 10</button>
+            <button>Đơn hàng chờ xác nhận: 5</button>
+        </div>
+    </div>
+        <!-- Product section -->
+        <section class="product-section">
+            <h2>Sản phẩm nổi bật</h2>
+            <div class="product-list">
+                <div class="product-card">
+                    <img src="product1.png" alt="Product 1">
+                </div>
+                <div class="product-card">
+                    <img src="product2.png" alt="Product 2">
+                </div>
+                <div class="product-card">
+                    <img src="product3.png" alt="Product 3">
+                </div>
+                <div class="product-card">
+                    <img src="product4.png" alt="Product 4">
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+    </body>
+</html>
