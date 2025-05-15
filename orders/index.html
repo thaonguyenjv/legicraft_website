@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý đơn hàng</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+    <div class="search">
+      <input type="text" placeholder="Nhập sản phẩm cần tìm kiếm">
+      <button>Tìm kiếm</button>
+    </div>
+    <div class="user-cart" style="display: flex; align-items: center; gap: 5px; ">
+            <i class="far fa-user-circle" style="font-size:38px"></i>
+            <div>
+                Tài khoản<br><strong>Thảo Nguyên</strong>
+            </div> <!-- đặt tên admin là Thảo Nguyên  -->
+        </div>
+  </div>
+
+  <div class="main-container">
+    <div class="sidebar">
+      <ul class="sidebar-menu">
+        <li class="active">☰ Chức năng quản lý</li>
+        <li>Quản lý đơn hàng</li>
+        <li>Quản lý sản phẩm</li>
+        <li>Quản lý người dùng</li>
+        <li>Quản lý doanh thu</li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <div class="order-header">
+
+      </div>
+
+      <div class="filters">
+        <div class="filter-tab active">Tất cả đơn hàng</div>
+        <div class="filter-tab">Chờ xác nhận</div>
+        <div class="filter-tab">Chờ giao hàng</div>
+        <div class="filter-tab">Đã giao</div>
+        <div class="filter-tab">Đã hủy</div>
+      </div>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Tìm kiếm">
+        <button>Tìm kiếm</button>
+      </div>
+
+      <table class="order-table">
+        <thead>
+          <tr>
+            <th>Mã đơn hàng <span class="sort-icon"></span></th>
+            <th>Tên khách hàng <span class="sort-icon"></span></th>
+            <th>Sản phẩm</th>
+            <th>Ngày lập đơn <span class="sort-icon"></span></th>
+            <th>Trạng thái</th>
+            <th>Giá trị <span class="sort-icon"></span></th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <div class="pagination">
+        <button>1</button>
+        <button>2</button>
+        <button>>></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="orderDetailsModal" class="order-details-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Chi tiết đơn hàng #<span id="orderIdDisplay"></span></h2>
+        <span class="close-modal" onclick="document.getElementById('orderDetailsModal').style.display='none'">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="order-info">
+          <div>
+            <div class="info-group">
+              <div class="info-label">Khách hàng:</div>
+              <div></div>
+            </div>
+            <div class="info-group">
+              <div class="info-label">Số điện thoại:</div>
+              <div></div>
+            </div>
+            <div class="info-group">
+              <div class="info-label">Địa chỉ giao hàng:</div>
+              <div></div>
+            </div>
+            <div class="info-group">
+          <div class="info-label"></div>
+        </div>
+          </div>
+          <div>
+            <div class="info-group">
+              <div class="info-label">Ngày đặt hàng:</div>
+              <div></div>
+            </div>
+            <div class="info-group">
+              <div class="info-label">Phương thức thanh toán:</div>
+              <div></div>
+            </div>
+            <div class="info-group">
+              <div class="info-label">Trạng thái đơn hàng:</div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="product-list">
+          <h3>Sản phẩm</h3>
+          <div class="product-item">
+            <!-- <div class="product-img"></div>  ảnh sản phẩm -->
+            <div class="product-details"></div>
+          </div>
+        </div>
+
+        <div style="text-align: right; margin-top: 20px;">
+          <div style="margin-bottom: 5px;">Phí vận chuyển:</div>
+          <div style="font-size: 1.2em; font-weight: bold;">Tổng cộng:</div>
+        </div>
+
+        <div class="status-update">
+          <h3>Cập nhật trạng thái</h3>
+          <select id="statusUpdate">
+            <option value="pending">Chờ xác nhận</option>
+            <option value="confirmed">Đã xác nhận</option>
+            <option value="shipping">Chờ giao</option>
+            <option value="delivered">Đã giao</option>
+            <option value="cancelled">Đã hủy</option>
+          </select>
+          <button class="btn btn-update">Cập nhật</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="orders.js"></script>
+</body>
+</html>

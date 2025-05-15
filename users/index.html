@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý người dùng</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+   <div class="topbar">
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+    <div class="search">
+      <input type="text" placeholder="Nhập sản phẩm cần tìm kiếm">
+      <button>Tìm kiếm</button>
+    </div>
+    <div class="user-cart" style="display: flex; align-items: center; gap: 5px; ">
+            <i class="far fa-user-circle" style="font-size:38px"></i>
+            <div>
+                Tài khoản<br><strong>Thảo Nguyên</strong>
+            </div> <!-- đặt tên admin là Thảo Nguyên  -->
+        </div>
+  </div>
+    <div class="content-container">
+        <nav class="sidebar">
+            <ul class="sidebar-menu">
+            <li class="active">☰ Chức năng quản lý</li>
+            <li>Quản lý đơn hàng</li>
+            <li>Quản lý sản phẩm</li>
+            <li>Quản lý người dùng</li>
+            <li>Quản lý doanh thu</li>
+      </ul>
+        </nav>
+
+        <main>
+             <div class="filters"></div>
+
+            <div class="search-container">
+                <input type="text" id="tableSearchInput" placeholder="Tìm kiếm">
+                <button onclick="searchTableContent()">Tìm kiếm</button>
+            </div>
+
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>Mã khách hàng</th>
+                        <th>Tên khách hàng</th>
+                        <th>Email</th>
+                        <th>Số điện thoại</th>
+                        <th>Ngày đăng ký</th>
+                        <th>Trạng thái</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>USR001</td>
+                        <td>Mai Quỳnh</td>
+                        <td>maiquynh@gmail.com</td>
+                        <td>0901234567</td>
+                        <td>01/12/2023</td>
+                        <td><span class="status active">Hoạt động</span></td>
+                        <td><button class="detail-btn" onclick="showDetails('USR001')">Chi tiết</button></td>
+                    </tr>
+                    <tr>
+                        <td>USR002</td>
+                        <td>Minh Hiếu</td>
+                        <td>minhhieu@gmail.com</td>
+                        <td>0912345678</td>
+                        <td>05/12/2023</td>
+                        <td><span class="status active">Hoạt động</span></td>
+                        <td><button class="detail-btn" onclick="showDetails('USR002')">Chi tiết</button></td>
+                    </tr>
+                    <tr>
+                        <td>USR003</td>
+                        <td>Hải Đăng</td>
+                        <td>haidang@gmail.com</td>
+                        <td>0923456789</td>
+                        <td>13/12/2023</td>
+                        <td><span class="status blocked">Khóa</span></td>
+                        <td><button class="detail-btn" onclick="showDetails('USR003')">Chi tiết</button></td>
+                    </tr>
+                    <tr>
+                        <td>USR004</td>
+                        <td>Mỹ Hoà</td>
+                        <td>myhoa@gmail.com</td>
+                        <td>0934567890</td>
+                        <td>14/12/2023</td>
+                        <td><span class="status active">Hoạt động</span></td>
+                        <td><button class="detail-btn" onclick="showDetails('USR004')">Chi tiết</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <div id="userModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">×</span>
+                    <h2>Chi tiết người dùng</h2>
+                    <div id="userDetails">
+                        <p><strong>Mã khách hàng:</strong> <span id="modalUserId"></span></p>
+                        <p><strong>Tên khách hàng:</strong> <span id="modalUserName"></span></p>
+                        <p><strong>Email:</strong> <span id="modalUserEmail"></span></p>
+                        <p><strong>Số điện thoại:</strong> <span id="modalUserPhone"></span></p>
+                        <p><strong>Ngày đăng ký:</strong> <span id="modalUserRegDate"></span></p>
+                        <p><strong>Trạng thái:</strong> <span id="modalUserStatus"></span></p>
+                    </div>
+                    <h3>Lịch sử mua hàng</h3>
+                    <table id="orderHistoryTable">
+                        <thead>
+                            <tr>
+                                <th>Mã đơn hàng</th>
+                                <th>Sản phẩm</th>
+                                <th>Ngày mua</th>
+                                <th>Giá trị</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orderHistoryBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="user.js"></script>
+</body>
+</html>
