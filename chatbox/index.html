@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LE.GICARFT | Trang chủ</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="chatbox.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="topbar">
+    <div class="logo">
+      <img src="logo.png" alt="Logo LE.GICARFT">
+    </div>
+    <div class="search">
+      <input type="text" placeholder="Nhập sản phẩm cần tìm kiếm">
+      <button>Tìm kiếm</button>
+    </div>
+    <div class="user-cart">
+      <a href="#">Đăng nhập/Đăng ký</a>
+      <a href="#" class="cart">🛒 Giỏ hàng</a>
+    </div>
+  </header>
+  <!-- Main layout -->
+  <div class="container">
+    <aside class="sidebar">
+        <h3>Danh mục sản phẩm</h3>
+        <ul>
+            <li>HOTWHEELS</li>
+            <li>MINI GT</li>
+            <li>TARMAWORKS</li>
+            <li>BABY CRY</li>
+            <li>LABUBU</li>
+            <li>BABY THREE</li>
+        </ul>
+        </aside>
+    <main class="main-content">
+        <!-- Banner section -->
+        <section class="banner">
+            <img src="banner.jpg" alt="Banner Hotwheels">
+        </section>
+
+        <!-- Product section -->
+        <section class="product-section">
+        <h2>Sản phẩm nổi bật</h2>
+        <div class="product-list">
+            <div class="product-card">
+                <img src="product1.png" alt="Product 1">
+                </div>
+                <div class="product-card">
+                <img src="product2.png" alt="Product 2">
+                </div>
+                <div class="product-card">
+                <img src="product3.png" alt="Product 3">
+                </div>
+                <div class="product-card">
+                <img src="product4.png" alt="Product 4">
+            </div>
+        </div>
+        </section>
+    </main>
+  </div>
+  <!-- Chat Toggle Button -->
+<button id="toggle-chat-btn">💬</button>
+
+<!-- Boxchat -->
+<div class="chat-bubble" id="chat-box">
+  <div class="chat-header">
+    <img src="logo.png" alt="LE.GICARFT logo">
+    <span class="status-dot"></span>
+  </div>
+  <div class="chat-message">
+    <p>Xin chào, chúng tôi có thể giúp gì cho bạn.</p>
+    <div class="chat-options">
+      <div class="chat-option">▼ Trả hàng/ hoàn hàng</div>
+      <div class="chat-option">▼ Chưa nhận được hàng</div>
+      <div class="chat-option">▼ Khiếu nại cửa hàng</div>
+    </div>
+  </div>
+  <div class="chat-input">
+    <div class="chat-icons">
+      <span>🔗</span>
+      <span>📎</span>
+      <span>📨</span>
+    </div>
+    <input type="text" placeholder="Bạn cần giúp gì?">
+  </div>
+</div>
+
+</body>
+</html>
