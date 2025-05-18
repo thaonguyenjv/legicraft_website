@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LE.GICARFT | Trang khách hàng thành viên</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="topbar">
+    <div class="logo">
+      <img src="logo.png" alt="Logo LE.GICARFT" />
+    </div>
+    <div class="search">
+      <input type="text" placeholder="Nhập từ khóa cần tìm kiếm" />
+      <button>Tìm kiếm</button>
+    </div>
+    <div class="user-cart">
+      <div class="user-info">
+        <div class="avatar">
+          <img src="https://tse3.mm.bing.net/th?id=OIP.xgGxThCiW1A5jWdxmRNKJQHaHa&pid=Api&P=0&h=220.png" alt="Avatar" />
+        </div>
+        <div class="account">
+          <span>Tài khoản</span>
+          <strong>Mai Quỳnh</strong>
+        </div>
+      </div>
+      <div class="cart">
+        <a href="#" class="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+          <span>Giỏ hàng</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="main-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h3>Danh mục sản phẩm</h3>
+      <ul class="category-list">
+        <li class="category-item"><i class="fas fa-chevron-down"></i> HOTWHEELS</li>
+        <li class="category-item"><i class="fas fa-chevron-down"></i> MINI GT</li>
+        <li class="category-item"><i class="fas fa-chevron-down"></i> TARMACWORKS</li>
+        <li class="category-item"><i class="fas fa-chevron-down"></i> BABY CRY</li>
+        <li class="category-item"><i class="fas fa-chevron-down"></i> LABUBU</li>
+        <li class="category-item"><i class="fas fa-chevron-down"></i> BABY THREE</li>
+      </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <!-- Banner -->
+       <div class="banner-container"></div>
+      <div class="banner">
+        <img src="banner.jpg" alt="Banner" class="banner-img" />
+      </div>
+
+      <!-- Featured Products -->
+      <div class="featured-products">
+        <h2>Sản phẩm nổi bật</h2>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="product1.png" alt="Sản phẩm 1" />
+            <div class="product-info">
+              <h3>CRYING AGAIN</h3>
+              <p class="price">450.000₫</p>
+              <button class="add-to-cart-btn">Thêm vào giỏ</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="product2.png" alt="Sản phẩm 2" />
+            <div class="product-info">
+              <h3>HOT WHEELS</h3>
+              <p class="price">320.000₫</p>
+              <button class="add-to-cart-btn">Thêm vào giỏ</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="product3.png" alt="Sản phẩm 3" />
+            <div class="product-info">
+              <h3>CRYING BUNNY</h3>
+              <p class="price">520.000₫</p>
+              <button class="add-to-cart-btn">Thêm vào giỏ</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="product4.png" alt="Sản phẩm 4" />
+            <div class="product-info">
+              <h3>MINI GT</h3>
+              <p class="price">480.000₫</p>
+              <button class="add-to-cart-btn">Thêm vào giỏ</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="cart-popup-overlay" id="cartPopupOverlay">
+  <div class="cart-popup">
+    <img id="popupProductImage" src="" alt="Sản phẩm" />
+    <div class="cart-popup-details">
+      <h3 id="popupProductName">Tên sản phẩm</h3>
+      <p id="popupProductPrice">Giá</p>
+      <div class="popup-buttons">
+        <button onclick="window.location.href='cart.html'">Đi tới giỏ hàng</button>
+        <button onclick="closeCartPopup()">Tiếp tục mua</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="filescript.js"></script>
+</body>
+</html>
