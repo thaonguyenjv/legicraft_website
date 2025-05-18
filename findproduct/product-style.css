@@ -1,0 +1,193 @@
+.breadcrumb {
+  padding: 10px 20px;
+  font-size: 14px;
+  background: #eee;
+}
+
+/* Topbar styles */
+.topbar-container {
+  width: 100%;
+  background-color: #F2E9DD; /* Màu nền như trong hình Figma */
+  margin-bottom: 20px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  width: 100%;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+   width: 150px;
+  height: 80px;
+  padding-left: 10px;
+}
+
+.search-container {
+  flex: 1;
+  display: flex;
+  margin: 0 20px;
+}
+
+.search-container input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  width: 100%;
+}
+
+.search-btn {
+  padding: 10px 15px;
+  background: #4a8a90;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.user-cart {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.account-text {
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.cart-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.cart-icon svg {
+  fill: currentColor;
+}
+
+/* Product detail styles */
+.product-detail {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 20px;
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+.left img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-detail {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: gray;
+  margin-right: 10px;
+}
+
+.new-price {
+  color: #d64040;
+  font-weight: bold;
+}
+
+select#quantity {
+  width: 100px;
+  padding: 8px;
+  margin: 10px 0;
+}
+
+.btn.add-to-cart {
+  background: #f5a6a6;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.tab-btns {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.tab-btns button {
+  padding: 8px 15px;
+  border: 1px solid #d64040;
+  border-radius: 10px;
+  background: white;
+  color: #d64040;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tab-btns button.active {
+  background: #d64040;
+  color: white;
+}
+
+.right {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.right ul {
+  padding-left: 20px;
+  list-style-type: none;
+}
+
+.right li {
+  margin-bottom: 10px;
+}
+
+.back-button {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.back-button a {
+  font-size: 24px;
+  text-decoration: none;
+  color: #333;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LE.GICARFT | Giỏ hàng</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Thanh tìm kiếm -->
+  <div class="search-container">
+    <img class="logo" src="logo.png" alt="LE.GICARFT" />
+    
+    <div class="search-box">
+      <input type="text" placeholder="Nhập sản phẩm cần tìm kiếm" />
+      <button class="search-btn">Tìm kiếm</button>
+    </div>
+
+    <div class="user-cart">
+      <div class="user-info">
+        <img src="https://tse3.mm.bing.net/th?id=OIP.xgGxThCiW1A5jWdxmRNKJQHaHa&pid=Api&P=0&h=220" alt="Avatar" class="avatar" />
+        <div class="account-text">
+          <span>Tài khoản</span><br />
+          <strong>Mai Quỳnh</strong>
+        </div>
+      </div>
+      <div class="cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span>Giỏ hàng</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Danh sách sản phẩm -->
+  <div class="cart-container">
+    <div class="cart-header">
+      <h2>TRANG CHỦ >> SẢN PHẨM</h2>
+      <button class="remove-all">Xoá tất cả</button>
+    </div>
+
+    <div class="cart-items">
+      <!-- Sản phẩm 1 -->
+      <div class="cart-item" data-id="1" data-price="460000">
+        <img src="product1.png" alt="Product 1" />
+        <div class="item-info">
+          <h4>CRYBABY Crying Again Series-Vinyl Face Plush Blind Box</h4>
+          <p>460.000 ₫</p>
+        </div>
+        <div class="item-price">
+          <div class="quantity-control">
+            Số lượng:
+            <button class="qty-btn minus">-</button>
+            <span class="qty">1</span>
+            <button class="qty-btn plus">+</button>
+          </div>
+          <div>
+            Tạm tính: <span class="price">460000</span> ₫
+          </div>
+        </div>
+        <button class="remove-btn">Xoá</button>
+      </div>
+
+      <!-- Sản phẩm 2 -->
+      <div class="cart-item" data-id="2" data-price="190000">
+        <img src="product2.png" alt="Product 2" />
+        <div class="item-info">
+          <h4>Blindbox Hotwheels</h4>
+          <p>190.000 ₫</p>
+        </div>
+        <div class="item-price">
+          <div class="quantity-control">
+            Số lượng:
+            <button class="qty-btn minus">-</button>
+            <span class="qty">1</span>
+            <button class="qty-btn plus">+</button>
+          </div>
+          <div>
+            Tạm tính: <span class="price">190000</span> ₫
+          </div>
+        </div>
+        <button class="remove-btn">Xoá</button>
+      </div>
+
+      <!-- Sản phẩm 3 -->
+      <div class="cart-item" data-id="3" data-price="210000">
+        <img src="product3.png" alt="Product 3" />
+        <div class="item-info">
+          <h4>Blindbox BabyThree</h4>
+          <p>210.000 ₫</p>
+        </div>
+        <div class="item-price">
+          <div class="quantity-control">
+            Số lượng:
+            <button class="qty-btn minus">-</button>
+            <span class="qty">1</span>
+            <button class="qty-btn plus">+</button>
+          </div>
+          <div>
+            Tạm tính: <span class="price">210000</span> ₫
+          </div>
+        </div>
+        <button class="remove-btn">Xoá</button>
+      </div>
+    </div>
+
+    <div class="cart-summary">
+      <span>Tổng cộng:</span>
+      <strong class="total">860.000 ₫</strong>
+      <button class="checkout-btn">Đặt hàng</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Đã xoá sản phẩm thành công</div>
+  <script src="script.js" defer></script>
+</body>
+
+</html>
