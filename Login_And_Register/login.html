@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - LE.GICARFT</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <header>
+        <a href="../membershipcus/index.html">
+            <picture>
+                <source srcset="logo.png" type="image/png">
+                <img src="logo.png" alt="LE.GICARFT Logo" class="logo">
+            </picture>
+        </a>
+    </header>
+    <main>
+        <section class="auth-container">
+            <h1>Đăng Nhập</h1>
+            <form id="loginForm" autocomplete="on">
+                <div class="form-group">
+                    <label for="accountType">Loại tài khoản:</label>
+                    <select id="accountType" name="accountType" onchange="updateEmail()">
+                        <option value="customer" selected>Khách hàng</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="customer@example.com" placeholder="Nhập email của bạn" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mật khẩu:</label>
+                    <input type="password" id="password" name="password" value="password123" placeholder="Nhập mật khẩu" required>
+                </div>
+                <button type="submit" class="auth-btn">Đăng Nhập</button>
+            </form>
+            <p>Chưa có tài khoản? <a href="register.html">Đăng ký ngay</a></p>
+        </section>
+    </main>
+</body>
+</html>
