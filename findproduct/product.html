@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chi tiết sản phẩm</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="product-style.css" />
+</head>
+<body>
+
+  <!-- Topbar full width -->
+  <div class="topbar-container">
+    <div class="topbar">
+      <div class="container">
+        <a href="../membershipcus/index.html"><img src="logo.png" class="logo" alt="Logo" /></a>
+        <div class="search-container">
+          <input type="text" placeholder="Nhập sản phẩm cần tìm kiếm" />
+          <button class="search-btn">Tìm kiếm</button>
+        </div>
+        <div class="user-cart">
+          <div class="user-info">
+            <a href="../deliveryandfeedback/index.html"><img src="https://tse3.mm.bing.net/th?id=OIP.xgGxThCiW1A5jWdxmRNKJQHaHa&pid=Api&P=0&h=220.png" alt="Avatar" class="avatar" /></a>
+            <div class="account-text">
+              <span>Tài khoản</span><br />
+              <strong>Mai Quỳnh</strong>
+            </div>
+          </div>
+          <a href="../shoppingcart/index.html" class="cart-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17 18C15.89 18 15 18.89 15 20C15 20.5304 15.2107 21.0391 15.5858 21.4142C15.9609 21.7893 16.4696 22 17 22C17.5304 22 18.0391 21.7893 18.4142 21.4142C18.7893 21.0391 19 20.5304 19 20C19 18.89 18.1 18 17 18ZM1 2V4H3L6.6 11.59L5.24 14.04C5.09 14.32 5 14.65 5 15C5 15.5304 5.21071 16.0391 5.58579 16.4142C5.96086 16.7893 6.46957 17 7 17H19V15H7.42C7.31 15 7.21 14.92 7.17 14.83L7.1 14.71L8.1 13H15.55C16.3 13 16.96 12.58 17.3 11.97L20.88 5.5C20.95 5.34 21 5.17 21 5C21 4.73478 20.8946 4.48043 20.7071 4.29289C20.5196 4.10536 20.2652 4 20 4H5.21L4.27 2M7 18C5.89 18 5 18.89 5 20C5 20.5304 5.21071 21.0391 5.58579 21.4142C5.96086 21.7893 6.46957 22 7 22C7.53043 22 8.03914 21.7893 8.41421 21.4142C8.78929 21.0391 9 20.5304 9 20C9 18.89 8.1 18 7 18Z"/>
+            </svg>
+            <span>Giỏ hàng</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Breadcrumb + Nút quay lại -->
+  <div class="container">
+    <div class="back-button">
+      <a href="index.html" title="Quay lại trang tìm kiếm">←</a>
+    </div>
+    <div class="breadcrumb">
+      Trang chủ >> Sản phẩm >> <span id="product-name-breadcrumb"></span>
+    </div>
+  </div>
+
+  <!-- Chi tiết sản phẩm -->
+  <div class="container">
+    <div class="product-detail">
+      <div class="left">
+        <img id="product-img" src="" alt="Ảnh sản phẩm" />
+      </div>
+      <div class="middle">
+        <h2 id="product-name"></h2>
+        <div class="price-detail">
+          <span class="old-price" id="product-old-price"></span>
+          <span class="new-price" id="product-price"></span>
+        </div>
+        <select id="quantity">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+        </select>
+        <button class="btn add-to-cart" onclick="window.location.href='../shoppingcart/index.html'">Thêm vào giỏ hàng</button>
+        <div class="tab-btns">
+          <button class="active">Mô tả sản phẩm</button>
+          <button disabled>Bình luận</button>
+        </div>
+        <p id="product-description"></p>
+      </div>
+      <div class="right">
+        <h4>Chính sách giao hàng</h4>
+        <ul>
+          <li>🚚 Giao hàng bởi giaohangnhanh</li>
+          <li>⚡ Giao hàng hoả tốc nội thành</li>
+          <li>🔁 Đổi trả hàng trong 3 ngày</li>
+          <li>📦 Cho phép kiểm tra hàng</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const formatPrice = (str) => new Intl.NumberFormat('vi-VN').format(Number(str));
+
+    const name = params.get("name");
+    const img = params.get("img");
+    const price = params.get("price");
+    const oldprice = params.get("oldprice");
+    const desc = params.get("desc");
+
+    document.getElementById("product-name").textContent = name;
+    document.getElementById("product-name-breadcrumb").textContent = name;
+    document.getElementById("product-img").src = img;
+    document.getElementById("product-price").textContent = "₫ " + formatPrice(price);
+    if (oldprice && oldprice !== price) {
+      document.getElementById("product-old-price").textContent = "₫ " + formatPrice(oldprice);
+    }
+    document.getElementById("product-description").textContent =
+  "Trải nghiệm tốc độ đỉnh cao với dòng xe đồ chơi Hot Wheels chính hãng từ Mattel - niềm đam mê bất tận của mọi thế hệ. " +
+  "Với thiết kế sắc nét, màu sắc rực rỡ cùng chi tiết mô phỏng tinh xảo, mỗi chiếc xe Hot Wheels là tác phẩm nghệ thuật thu nhỏ hoàn hảo tỷ lệ 1:64.";
+
+  </script>
+</body>
+</html>
