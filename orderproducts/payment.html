@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanh toán</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo">
+      <img src="logo.png" alt="Le Gicart Logo">
+    </div>
+    <div class="search">
+      <input type="text" placeholder="Nhập sản phẩm cần tìm kiếm">
+      <button>Tìm kiếm</button>
+    </div>
+    <div class="user-cart">
+      <div class="user-info">
+        <div class="avatar">
+          <a href="../deliveryandfeedback/index.html"><img src="https://tse3.mm.bing.net/th?id=OIP.xgGxThCiW1A5jWdxmRNKJQHaHa&pid=Api&P=0&h=220.png" alt="Avatar" /></a>
+        </div>
+        <div class="account">
+          <span>Tài khoản</span>
+          <strong>Mai Quỳnh</strong>
+        </div>
+      </div>
+      <div class="cart">
+        <a href="#" class="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+          <span>Giỏ hàng</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="sidebar">
+      <h3>Danh mục sản phẩm</h3>
+      <ul class="sidebar-menu">
+        <li>HOTWHEELS</li>
+        <li>MINI GT</li>
+        <li>TARMACWORKS</li>
+        <li class="active">BABY CRY</li>
+        <li>LABUBU</li>
+        <li>BABY THREE</li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <div class="order-header">
+        <h2>TRANG CHỦ >> GIỎ HÀNG >> ĐẶT HÀNG >> THANH TOÁN</h2>
+      </div>
+
+      <div class="payment-details" id="payment-section">
+        <h3>PHƯƠNG THỨC THANH TOÁN</h3>
+        <p>Tất cả giao dịch đều được bảo mật với mã hóa. Thông tin thẻ sẽ không được lưu trữ.</p>
+        <div class="payment-option">
+          <input type="radio" name="payment-method" value="bank" id="bank" checked>
+          <label for="bank">
+            <span class="payment-icon">💳</span> Thanh toán bằng tài khoản ngân hàng
+          </label>
+          <div class="bank-details" id="bank-details">
+            <select id="bank-select">
+              <option value="bank1">Chọn ngân hàng</option>
+              <option value="bank2">Ngân hàng MB</option>
+              <option value="bank3">Ngân hàng Techcombank</option>
+               <option value="bank3">Khác...</option>
+            </select>
+            <input type="text" placeholder="Nhập số thẻ" id="card-number">
+          </div>
+        </div>
+        <div class="payment-option">
+          <input type="radio" name="payment-method" value="cash" id="cash">
+          <label for="cash">
+            <span class="payment-icon">💵</span> Thanh toán bằng tiền mặt
+          </label>
+        </div>
+        <div class="payment-option">
+        </div>
+        <button class="btn" onclick="goBack()">Trở về</button>
+        <button class="btn btn-update" onclick="completePayment()">Hoàn tất</button>
+      </div>
+
+      <div class="success-message" id="success-section" style="display: none;">
+        <h3>Đơn hàng đã đặt thành công!</h3>
+        <p>Cảm ơn bạn đã mua sắm tại LE.GICARFT. Đơn hàng của bạn sẽ được xử lý sớm.</p>
+        <button class="btn btn-update" onclick="window.location.href='../membershipcus/index.html'">Trở về trang chủ</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
