@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lịch sử đơn hàng</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo">
+      <img src="logo.png" alt="Le Gicart Logo">
+    </div>
+    <div class="search">
+      <input type="text" placeholder="Nhập sản phẩm cần tìm kiếm">
+      <button>Tìm kiếm</button>
+    </div>
+    <div class="user-cart">
+      <span>Tài khoản:</span>
+      <span>Mai Quynh</span>
+      <a class="cart">🛒 Giỏ hàng</a>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="sidebar">
+      <h3>Danh mục sản phẩm</h3>
+      <ul class="sidebar-menu">
+        <li>HOTWHEELS</li>
+        <li>MINI GT</li>
+        <li>TARMACWORKS</li>
+        <li class="active">BABY CRY</li>
+        <li>LABUBU</li>
+        <li>BABY THREE</li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <div class="order-header">
+        <h2>Lịch sử đơn hàng</h2>
+      </div>
+
+      <div class="filters">
+        <div class="filter-tab" data-status="all">Tất cả đơn hàng</div>
+        <div class="filter-tab" data-status="pending">Chờ xác nhận</div>
+        <div class="filter-tab" data-status="shipping">Chờ giao hàng</div>
+        <div class="filter-tab active" data-status="delivered">Đã giao</div>
+        <div class="filter-tab" data-status="cancelled">Đã hủy</div>
+      </div>
+
+      <div class="search-bar">
+        <input type="text" id="order-search" placeholder="Tìm kiếm">
+        <button onclick="searchOrders()">Tìm kiếm</button>
+      </div>
+
+      <table class="order-table">
+        <thead>
+          <tr>
+            <th>Mã đơn hàng <span class="sort-icon">▼</span></th>
+            <th>Tên khách hàng</th>
+            <th>Sản phẩm</th>
+            <th>Ngày lập đơn</th>
+            <th>Trạng thái</th>
+            <th>Giá trị</th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+        <tbody id="order-table-body">
+        </tbody>
+      </table>
+
+      <div class="pagination" id="pagination">
+        <button onclick="changePage(1)">1</button>
+        <button onclick="changePage(2)">2</button>
+        <button onclick="changePage(3)">>></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Details Modal -->
+  <div id="order-details-modal" class="order-details-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Chi tiết đơn hàng #<span id="modal-order-id"></span></h3>
+        <span class="close-modal" onclick="closeModal('order-details-modal')">×</span>
+      </div>
+      <div class="modal-body">
+        <div class="order-info">
+          <div>
+            <div class="info-group">
+              <div class="info-label">Khách hàng:</div>
+              <div id="modal-customer-name"></div>
+            </div>
+            <div class="info-group">
+              <div class="info-label">Số điện thoại:</div>
+              <div id="modal-phone"></div>
+            </div>
+            <div class="info-group">
+              <div class="info-label">Địa chỉ giao hàng:</div>
+              <div id="modal-address"></div>
+            </div>
+          </div>
+          <div>
+            <div class="info-group">
+              <div class="info-label">Ngày đặt hàng:</div>
+              <div id="modal-order-date"></div>
+            </div>
+            <div class="info-group">
+              <div class="info-label">Phương thức thanh toán:</div>
+              <div id="modal-payment-method"></div>
+            </div>
+            <div class="info-group">
+              <div class="info-label">Trạng thái đơn hàng:</div>
+              <div id="modal-status"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-list">
+          <h4>Sản phẩm</h4>
+          <div id="modal-product-list"></div>
+        </div>
+
+        <div class="order-summary">
+          <div>Phí vận chuyển: <span id="modal-shipping-fee"></span></div>
+          <div>Tổng cộng: <span id="modal-total"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Review Modal -->
+  <div id="review-modal" class="order-details-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Đánh giá sản phẩm</h3>
+        <span class="close-modal" onclick="closeModal('review-modal')">×</span>
+      </div>
+      <div class="modal-body">
+        <div class="product-item">
+          <img id="review-product-img" class="product-img" src="" alt="Product Image">
+          <div class="product-details">
+            <div id="review-product-name"></div>
+            <div id="review-product-price"></div>
+          </div>
+        </div>
+        <div class="review-form">
+          <h4>Đánh giá sản phẩm</h4>
+          <div id="star-rating" style="margin-bottom: 10px;">
+            <span class="star" data-value="1">★</span>
+            <span class="star" data-value="2">★</span>
+            <span class="star" data-value="3">★</span>
+            <span class="star" data-value="4">★</span>
+            <span class="star" data-value="5">★</span>
+          </div>
+          <textarea id="review-comment" placeholder="Hãy chia sẻ nhận xét cho sản phẩm này bạn nhé" rows="4" style="width: 100%;"></textarea>
+          <button class="btn btn-update" onclick="submitReview()">Đăng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý doanh thu </title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+    <div class="search">
+      <input type="text" placeholder="Nhập sản phẩm cần tìm kiếm">
+      <button style="background-color: #4f92a5; color: white;">Tìm kiếm</button>
+    </div>
+    <div class="user-cart" style="display: flex; align-items: center; gap: 5px;">
+      <div style="text-align: right; margin-right: 20px;">
+      </div>
+      <i class="far fa-user-circle" style="font-size:38px"></i>
+      <div>
+        Tài khoản<br><strong>Thảo Nguyên</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="sidebar">
+      <ul class="sidebar-menu">
+        <li class="active">☰ Chức năng quản lý</li>
+        <li>Quản lý đơn hàng</li>
+        <li>Quản lý sản phẩm</li>
+        <li>Quản lý người dùng</li>
+        <li style="background-color: #00000010;">Quản lý doanh thu</li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <div class="tab-header">
+      </div>
+
+      <div class="filters">
+        <div class="filter-tab active" onclick="showTab('revenue')">Thống kê doanh thu</div>
+        <div class="filter-tab" onclick="showTab('products')">Thống kê sản phẩm</div>
+      </div>
+
+      <!-- Quản lý doanh thu -->
+      <div class="tab-content" id="revenueContent">
+        <h2>Thống kê doanh thu</h2>
+        <div class="stats-header" style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="background-color: #4f92a5; color: white; padding: 1px 2px; border-radius: 3px;">Tổng doanh thu</span>
+          <div class="stats-options" style="display: flex; align-items: center; gap: 10px;">
+              <span>₫ 1,000,000</span>
+            <select id="timePeriod" style="border-top: 2px solid #4f92a5;">
+              <option value="day">Doanh thu ngày</option>
+              <option value="month">Doanh thu tháng</option>
+              <option value="year">Doanh thu năm</option>
+            </select>
+            <button onclick="showStats()" style="background-color: #4f92a5; color: white; text-transform: uppercase;">In</button>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr style="background-color: #e0e0e0;">
+              <th>Mã hóa đơn</th>
+              <th>Tên sản phẩm</th>
+              <th>Danh mục</th>
+              <th>Tổng tiền</th>
+            </tr>
+          </thead>
+          <tbody id="statsTable">
+            <tr>
+              <td>HD0010</td>
+              <td>Celebrations 84 Mustang Svo</td>
+              <td>Hot Wheels</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td>HD0011</td>
+              <td>Basic Williams Racing, Ford GT Le...</td>
+              <td>HotWheels, Mini GT</td>
+              <td>570,000</td>
+            </tr>
+            <tr>
+              <td>HD0012</td>
+              <td>Macaron Bunny Series</td>
+              <td>Baby Three</td>
+              <td>219,000</td>
+            </tr>
+            <tr>
+              <td>HD0013</td>
+              <td>Ford RS200</td>
+              <td>Tarmac Works</td>
+              <td>600,000</td>
+            </tr>
+            <tr>
+              <td>HD0014</td>
+              <td>Ferrari 458 Italia GT3</td>
+              <td>Tarmac Works</td>
+              <td>500,000</td>
+            </tr>
+            <tr>
+              <td>HD0015</td>
+              <td>Lucky Cat Zipper Bag Series</td>
+              <td>Baby Three</td>
+              <td>219,000</td>
+            </tr>
+            <tr>
+              <td>HD0016</td>
+              <td>Basic Slide Kick</td>
+              <td>HotWheels</td>
+              <td>49,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Quản lý sản phẩm -->
+      <div class="tab-content" id="productsContent" style="display: none;">
+        <h2>Thống kê sản phẩm</h2>
+        <div class="stats-header" style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="background-color: #4f92a5; color: white; padding: 5px 10px; border-radius: 3px;">Top 10 sản phẩm bán chạy</span>
+          <div class="stats-options" style="display: flex; align-items: center; gap: 10px;">
+            <span id="totalProducts">Tổng sản phẩm: 10</span>
+            <select id="productPeriod" onchange="showTopProducts()" style="border-top: 2px solid #4f92a5;">
+              <option value="day">Bán chạy ngày</option>
+              <option value="month">Bán chạy tháng</option>
+              <option value="year">Bán chạy năm</option>
+            </select>
+            <button onclick="showTopProducts()" style="background-color: #4f92a5; color: white; text-transform: uppercase;">In</button>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr style="background-color: #e0e0e0;">
+              <th>Mã sản phẩm</th>
+              <th>Tên sản phẩm</th>
+              <th>Danh mục</th>
+              <th>Số lượng bán</th>
+            </tr>
+          </thead>
+          <tbody id="productTable">
+            <tr>
+              <td>HWH01</td>
+              <td>Hot Wheels Porsche 356</td>
+              <td>Hot Wheels</td>
+              <td>150</td>
+            </tr>
+            <tr>
+              <td>MGT07</td>
+              <td>Lamborghini Aventador SVJ</td>
+              <td>Mini GT</td>
+              <td>120</td>
+            </tr>
+            <tr>
+              <td>LBB02</td>
+              <td>LaBuBu Hip-hop Girl Figure</td>
+              <td>LaBuBu</td>
+              <td>100</td>
+            </tr>
+            <tr>
+              <td>BBC08</td>
+              <td>Baby Cry Again Series</td>
+              <td>Baby Cry</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>BBT10</td>
+              <td>Animal Party Big Cute Plush</td>
+              <td>Baby Three</td>
+              <td>80</td>
+            </tr>
+            <tr>
+              <td>TMW03</td>
+              <td>Tarmac Works Mitsubishi Lancer</td>
+              <td>Tarmac Works</td>
+              <td>70</td>
+            </tr>
+            <tr>
+              <td>HWH02</td>
+              <td>Voiture Pagani Huayra</td>
+              <td>Hot Wheels</td>
+              <td>60</td>
+            </tr>
+            <tr>
+              <td>HD0012</td>
+              <td>Macaron Bunny Series</td>
+              <td>Baby Three</td>
+              <td>50</td>
+            </tr>
+            <tr>
+              <td>HD0013</td>
+              <td>Ford RS200</td>
+              <td>Tarmac Works</td>
+              <td>40</td>
+            </tr>
+            <tr>
+              <td>HD0014</td>
+              <td>Ferrari 458 Italia GT3</td>
+              <td>Tarmac Works</td>
+              <td>30</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
