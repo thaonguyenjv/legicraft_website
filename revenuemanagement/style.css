@@ -96,7 +96,7 @@ body {
   padding: 20px;
 }
 
-.order-header {
+.tab-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -123,31 +123,28 @@ body {
   border-bottom: 3px solid #4f92a5;
 }
 
-.search-bar {
-  display: flex;
+.tab-content {
   margin-bottom: 20px;
 }
 
-.search-bar input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px 0 0 5px;
-  outline: none;
+.stats-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.search-bar button {
-  padding: 5px 10px ;
-  margin: 0 10px;
+.stats-title {
   background-color: #4f92a5;
   color: white;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  padding: 5px 10px;
+  border-radius: 3px;
 }
 
-.search-bar button:hover {
-  background-color: #3d7784;
+.stats-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .product-table {
@@ -175,120 +172,27 @@ body {
   border-bottom: 1px solid #ddd;
 }
 
-.produc-table tr:hover {
+.product-table tr:hover {
   background-color: #f9f9f9;
 }
 
-.sort-icon {
-  font-size: 0.8em;
-  margin-left: 5px;
-}
-
-.action-btn {
-      margin: 0 5px;
-      padding: 5px 10px;
-      border-radius: 4px;
-      border: none;
-      cursor: pointer;
-    }
-.btn-edit { background-color: #46B9FC; color: #00A1FF; }
-.btn-delete { background-color: #FD8987; color: #EC221F; }
-
-.modal {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-  overflow: auto; /* phòng khi nội dung modal quá dài */
-}
-
-.modal-content {
-  background-color: #fff;
-  padding: 20px 30px;
-  border-radius: 10px;
-  width: 100%;
-  max-width: 500px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
-  position: relative;
-}
-
-.modal-content .close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
-  color: #333;
-  cursor: pointer;
-}
-
-/* Inputs and Labels */
-.modal-content label {
-  font-weight: 500;
-  display: block;
-  margin-top: 10px;
-}
-
-.modal-content input[type="text"],
-.modal-content input[type="number"] {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-
-/* Buttons */
-.modal-content button {
-  padding: 8px 14px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-right: 10px;
-  font-size: 14px;
-}
-
-.modal-content button[type="submit"] {
-  background-color: #3498db;
-  color: white;
-}
-
-.modal-content button[type="button"] {
-  background-color: #ccc;
-  color: #333;
-}
-
-
-.product-list {
+.chart-container {
+  height: 650px;
   margin-top: 20px;
-}
-
-.product-item {
-  display: flex;
-  border-bottom: 1px solid #eee;
-  padding: 10px 0;
-}
-
-.product-img {
-  width: 80px;
-  height: 80px;
-  background-color: #eee;
-  margin-right: 15px;
-}
-
-.product-details {
-  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .btn-update {
   background-color: #4f92a5;
   color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
   transition: background-color 0.3s;
 }
 
@@ -296,45 +200,6 @@ body {
   background-color: #3d7784;
 }
 
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .topbar {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .search {
-    margin: 10px 0;
-    max-width: 100%;
-  }
-
-  .main-container {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-  }
-
-  .order-table {
-    font-size: 0.9em;
-  }
-
-  .order-table th,
-  .order-table td {
-    padding: 8px;
-  }
-
-  .modal-content {
-    width: 90%;
-    margin: 10% auto;
-  }
-
-  .order-info {
-    grid-template-columns: 1fr;
-  }
-}
 /* Liên kết trong menu */
 .sidebar-menu li a {
   display: block;
@@ -360,4 +225,34 @@ body {
   color: white;
   font-weight: bold;
   cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .search {
+    margin: 10px 0;
+    max-width: 100%;
+  }
+
+  .main-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .product-table {
+    font-size: 0.9em;
+  }
+
+  .product-table th,
+  .product-table td {
+    padding: 8px;
+  }
 }

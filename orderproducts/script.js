@@ -2,10 +2,6 @@ function proceedToPayment() {
   window.location.href = "payment.html";
 }
 
-function goBack() {
-  window.location.href = "index.html";
-}
-
 function completePayment() {
   var paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
   var bankDetails = document.getElementById("bank-details");
