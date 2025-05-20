@@ -51,7 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
   searchButton.addEventListener('click', function () {
     const searchTerm = searchInput.value.trim().toLowerCase();
     if (searchTerm) {
-      alert(`Đang tìm kiếm: "${searchTerm}"`);
+      /*alert(`Đang tìm kiếm: "${searchTerm}"`);*/
+      window.location.href="../findproduct/index.html";
     } else {
       alert('Vui lòng nhập từ khóa tìm kiếm');
     }

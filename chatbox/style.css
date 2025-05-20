@@ -176,7 +176,7 @@ body {
   display: flex;
   align-items: center;
   padding: 10px;
-  background: #EBDCC4;
+  background: #F2E9DD;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 }
@@ -196,19 +196,24 @@ body {
 
 .chat-message {
   padding: 10px;
-  background: #fff;
+  background:rgb(211, 207, 208);
   border-bottom: 1px solid #ddd;
 }
 
 .chat-message p {
   margin: 0 0 10px 0;
-  font-size: 14px;
+  font-size: 13px;
+  background: #f1f1f1;
+  padding: 8px;
+  border-radius: 6px;
+  width: 80%;
 }
 
 .chat-options {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  width: 86%;
 }
 
 .chat-option {
@@ -218,6 +223,7 @@ body {
   font-size: 13px;
   cursor: pointer;
   box-shadow: 0 2px 3px rgba(0,0,0,0.05);
+  font-style: italic;
 }
 
 .chat-input {

@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var accountType = document.getElementById('accountType').value;
             alert('Đăng nhập thành công!');
             if (accountType === 'customer') {
-                window.location.href = '../homepage/index.html';
+                window.location.href = '../membershipcus/index.html';
             } else if (accountType === 'admin') {
                 window.location.href = '../adminpage/index.html';
             }
