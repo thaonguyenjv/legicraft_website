@@ -11,14 +11,14 @@
   <!-- Header -->
   <header class="topbar">
     <div class="logo">
-      <img src="logo.png" alt="Logo LE.GICARFT">
+      <a href="index.html"><img src="logo.png" alt="Logo LE.GICARFT"></a>
     </div>
     <div class="search">
       <input type="text" placeholder="Nhập sản phẩm cần tìm kiếm">
       <button>Tìm kiếm</button>
     </div>
     <div class="user-cart">
-      <a href="#">Đăng nhập/Đăng ký</a>
+      <a href="../Login_And_Register/login.html">Đăng nhập/Đăng ký</a>
       <a href="#" class="cart">🛒 Giỏ hàng</a>
     </div>
   </header>
@@ -61,5 +61,33 @@
         </section>
     </main>
   </div>
+  <!-- Chat Toggle Button -->
+<button id="toggle-chat-btn">💬</button>
+
+<!-- Boxchat -->
+<div class="chat-bubble" id="chat-box">
+  <div class="chat-header">
+    <img src="logo.png" alt="LE.GICARFT logo">
+    <span class="status-dot"></span>
+  </div>
+  <!-- Dòng phản hồi từ hệ thống-->
+  <div class="chat-message">
+    <p>Xin chào, chúng tôi có thể giúp gì cho bạn.</p>
+    <div class="chat-options">
+      <div class="chat-option">▼ Trả hàng/ hoàn hàng</div>
+      <div class="chat-option">▼ Chưa nhận được hàng</div>
+      <div class="chat-option">▼ Khiếu nại cửa hàng</div>
+    </div>
+  </div>
+  <div class="chat-input">
+    <div class="chat-icons">
+      <span>🔗</span>
+      <span>📎</span>
+      <span>📨</span>
+    </div>
+    <input type="text" placeholder="Bạn cần giúp gì?">
+  </div>
+</div>
+
 </body>
 </html>

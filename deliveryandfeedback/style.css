@@ -52,9 +52,47 @@ body {
 .user-cart {
   display: flex;
   align-items: center;
+<<<<<<< HEAD
+  gap: 20px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.account {
+  display: flex;
+  flex-direction: column;
+}
+
+.account span {
+  font-size: 12px;
+  color: #666;
+}
+
+.account strong {
+  font-size: 14px;
+}
+
+.cart-icon {
+  display: flex;
+  align-items: center;
   gap: 5px;
-  padding-right: 15px;
+  color: #333;
+  text-decoration: none;
   font-weight: bold;
+}
+
+.cart-icon i {
+  font-size: 20px;
 }
 
 .main-container {
@@ -76,16 +114,15 @@ body {
 }
 
 .sidebar-menu li {
-  padding: 10px 16px;
+  padding: 15px 20px;
   border-bottom: 1px solid #e0e0e0;
-  
   transition: background-color 0.3s;
 }
+
 .sidebar-menu li:hover {
   background-color: #e0e0e0;
   cursor: pointer;
 }
-
 
 .sidebar-menu li.active {
   background-color: #6a9aa1;
@@ -429,30 +466,4 @@ body {
   .order-info {
     grid-template-columns: 1fr;
   }
-}
-/* Liên kết trong menu */
-.sidebar-menu li a {
-  display: block;
-  color: black;
-  text-decoration: none;
-  padding: 10px 16px;
-  transition: background-color 0.3s;
-}
-
-/* Hover */
-.sidebar-menu li a:hover {
-  background-color: #e0e0e0;
-}
-
-/* Mục đang được chọn (active) */
-.sidebar-menu li.active a {
-  background-color: #d0e0e3;
-  color: #333;
-  font-weight: bold;
-}
-.sidebar-menu li.active:first-child a {
-  background-color: #6a9aa1 !important;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
 }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đặt hàng</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo">
+      <a href="../membershipcus/index.html"><img src="logo.png" alt="Le Gicart Logo"></a>
+    </div>
+    <div class="search">
+      <input type="text" placeholder="Nhập sản phẩm cần tìm kiếm">
+      <button>Tìm kiếm</button>
+    </div>
+    <div class="user-cart">
+      <div class="user-info">
+        <div class="avatar">
+          <a href="../deliveryandfeedback/index.html"><img src="https://tse3.mm.bing.net/th?id=OIP.xgGxThCiW1A5jWdxmRNKJQHaHa&pid=Api&P=0&h=220.png" alt="Avatar" /></a>
+        </div>
+        <div class="account">
+          <span>Tài khoản</span>
+          <strong>Mai Quỳnh</strong>
+        </div>
+      </div>
+      <div class="cart">
+        <a href="../shoppingcart/index.html" class="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+          <span>Giỏ hàng</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="sidebar">
+      <h3>Danh mục sản phẩm</h3>
+      <ul class="sidebar-menu">
+        <li>HOTWHEELS</li>
+        <li>MINI GT</li>
+        <li>TARMACWORKS</li>
+        <li class="active">BABY CRY</li>
+        <li>LABUBU</li>
+        <li>BABY THREE</li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <div class="order-header">
+        <h2>TRANG CHỦ >> GIỎ HÀNG >> ĐẶT HÀNG</h2>
+      </div>
+
+      <div class="order-details">
+        <h3>CRYBABY Crying Again Series-Vinyl Face Plush Blind Box</h3>
+        <div class="product-info">
+          <img src="product1.png" alt="Product Image" class="product-img">
+          <div class="product-text">
+            <p>Danh mục: Baby Cry</p>
+            <p>Ngày đặt hàng: 19/01/2025</p>
+            <p>Giá trị đơn hàng: 490.000đ</p>
+            <p>Khuyến mãi: 30.000đ</p>
+            <p><strong>Tổng cộng: 460.000đ</strong></p>
+          </div>
+        </div>
+        <div class="order-form">
+          <label>Họ và tên</label>
+          <input type="text" value="Quang Thái" readonly>
+          <label>Tên khác hàng</label>
+          <input type="text" value="Quang Thái" readonly>
+          <label>Email</label>
+          <input type="email" value="quangthai@example.com" readonly>
+          <label>Địa chỉ</label>
+          <input type="text" value="14 Lê Lợi, Vĩnh Ninh, Huế, Thừa Thiên Huế" readonly>
+          <label>Số điện thoại</label>
+          <input type="tel" value="089123456" readonly>
+          <button class="btn btn-update" onclick="proceedToPayment()">Thanh toán</button>
+          <button class="btn" onclick="goBack()">Trở về</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
